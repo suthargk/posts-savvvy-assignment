@@ -12,7 +12,7 @@ const Pagination = ({ handlePrev, handleNext, currentPage, posts }) => {
         type="button"
         className={`p-2 w-10 hover:bg-gray-100 transition-all duration-300 ${
           (currentPage === 1 || posts.length === 0) &&
-          "cursor-not-allowed text-gray-300"
+          "cursor-not-allowed text-gray-300  bg-gray-100"
         }`}
         onClick={handlePrev}
         disabled={currentPage === 1 || posts.length === 0}
@@ -26,7 +26,7 @@ const Pagination = ({ handlePrev, handleNext, currentPage, posts }) => {
         type="button"
         className={`p-2 w-10 hover:bg-gray-100 transition-all duration-300 ${
           (currentPage === 10 || posts.length === 0) &&
-          "cursor-not-allowed text-gray-300"
+          "cursor-not-allowed text-gray-300 bg-gray-100"
         }`}
         onClick={handleNext}
         disabled={currentPage === 10 || posts.length === 0}
