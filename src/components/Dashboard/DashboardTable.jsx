@@ -33,18 +33,14 @@ const DashboardTable = ({ posts, isLoading, error }) => {
         </th>
       </tr>
     );
-  }
-
-  if (!posts.length) {
+  } else if (!posts.length) {
     return (
       <div className="h-full w-full flex justify-center items-center flex-col p-8">
         <EmptyDashboard />
         <h3 className="text-xl">Not Result Found</h3>
       </div>
     );
-  }
-
-  if (posts.length) {
+  } else if (posts.length) {
     element = posts.map((post) => {
       return (
         <tr key={post.id} className="hover:bg-gray-100 cursor-pointer">
