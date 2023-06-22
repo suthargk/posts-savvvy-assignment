@@ -2,7 +2,6 @@ import {
   FETCH_NEXT_POSTS,
   FETCH_POSTS,
   FETCH_PREV_POSTS,
-  SEARCH_POST,
   SORT_POST,
 } from "../action";
 
@@ -69,10 +68,6 @@ export const reducer = (state = INITIALDATA, action) => {
       return { ...state, posts: sortedData, sort: sorting };
     }
 
-    case SEARCH_POST: {
-      const { data } = action.payload;
-      return { ...state, posts: data };
-    }
     default:
       return state;
   }

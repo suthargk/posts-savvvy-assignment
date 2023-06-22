@@ -8,7 +8,6 @@ import {
   FETCH_NEXT_POSTS,
   FETCH_POSTS,
   FETCH_PREV_POSTS,
-  SEARCH_POST,
 } from "../../store/action";
 
 const Dashboard = ({ posts, dispatch, currentPage, sort }) => {
@@ -82,8 +81,8 @@ const Dashboard = ({ posts, dispatch, currentPage, sort }) => {
         .then((res) => res.json())
         .then((data) => {
           dispatch({
-            type: SEARCH_POST,
-            payload: { data },
+            type: FETCH_POSTS,
+            payload: { data, currentPage },
           });
         })
         .catch((err) => {
